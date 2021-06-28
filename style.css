@@ -5,8 +5,6 @@
 }
 
 body {
-  padding: 0;
-  margin: 0;
   background-color: #291f2c;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
@@ -20,10 +18,22 @@ body {
 }
 
 .main-header {
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #291f2ccf;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 1355px;
 }
 
 .brand-logo {
@@ -32,48 +42,56 @@ body {
   font-weight: 800;
   color: inherit;
   text-decoration: none;
+  padding: 0 1rem;
 }
 
 .brand-logo span {
   color: #89858f;
 }
 
-.fa-bars,
-.fa-times {
+.fa-bars {
   color: #462f54;
   font-size: 2.5rem;
   cursor: pointer;
-}
-
-.main-nav {
-  /* display: none; */
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-}
-
-.main-nav.open {
-  display: block;
+  padding: 0 1rem;
+  z-index: 100;
 }
 
 .main-nav__items {
   background: #0a010d;
   width: 70%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  margin-left: auto;
   list-style: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: 1s;
 }
 
-.fa-times {
+.main-nav__items.show {
+  right: 0;
+}
+
+.main-nav__items.show::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.37);
+  width: 30%;
+  height: 100vh;
   position: fixed;
-  top: 2rem;
-  right: 1.5rem;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.main-nav__items.show::after.shadow {
+  opacity: 1;
 }
 
 .main-nav li {
@@ -94,7 +112,7 @@ body {
 }
 
 .hero-content {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 6.3vw, 2rem);
   position: relative;
   bottom: 5rem;
 }
@@ -102,7 +120,7 @@ body {
 .hero-content span {
   color: #714891;
   font-family: "Bitter", serif;
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 5vw, 1rem);
   letter-spacing: 0.1em;
   padding-left: 0.2rem;
 }
@@ -139,6 +157,7 @@ body {
 
 .hero-btn:hover {
   border-color: #c9c7ca;
+  cursor: pointer;
 }
 
 .section-header {
@@ -195,11 +214,20 @@ body {
 
 .about-content__img {
   margin-left: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
   border: 0.3rem solid #714891;
   border-radius: 0.5rem;
+  /* outline: 0.3rem solid #714891;
+  outline-offset: -1rem; */
   position: relative;
+  transition: opacity 1s;
+  transition: 1s;
 }
+
+/* .about-content__img:hover {
+  outline: 0.3rem solid #714891;
+  outline-offset: -1.25rem;
+} */
 
 .about-content__img img {
   width: 12.5rem;
@@ -220,7 +248,23 @@ body {
   height: 98%;
   width: 100%;
   background: #bb68fb;
-  opacity: 0.7;
+  opacity: 0.5;
+  transition: 1s;
+  mix-blend-mode: multiply;
+}
+
+.about-content__img:hover:after {
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: 1.78rem;
+  right: 1.5rem;
+  border-radius: 0.5rem;
+  height: 98%;
+  width: 100%;
+  background: #bb68fb;
+  opacity: 0;
+  transition: 1s;
   mix-blend-mode: multiply;
 }
 
@@ -244,6 +288,7 @@ body {
   height: 22rem;
   object-fit: cover;
   opacity: 0.1;
+  transition: opacity 2s;
 }
 
 .projects-content__des {
@@ -283,6 +328,7 @@ body {
   margin-left: 0.2rem;
   margin-right: 0.9rem;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .contact-section {
@@ -318,6 +364,7 @@ body {
 
 .contact-content button:hover {
   border-color: #c9c7ca;
+  cursor: pointer;
 }
 
 .main-footer {
@@ -334,10 +381,173 @@ body {
 
 .footer-social i:hover {
   color: #714891;
+  cursor: pointer;
 }
 
 .footer-info {
   font-family: "Bitter", serif;
   letter-spacing: 0.2rem;
   font-size: 0.7rem;
+}
+
+@media (min-width: 769px) {
+  .container {
+    max-width: 1000px;
+    padding: 2rem;
+  }
+
+  .header-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .fa-bars {
+    display: none;
+  }
+
+  .main-nav__items {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    transition: 0ms;
+  }
+
+  .main-nav li {
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  .main-nav a {
+    font-size: 1.125rem;
+  }
+
+  .hero-content {
+    bottom: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    width: 75%;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  .section-header__tittle {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .about-content__des {
+    width: 50%;
+    font-size: 1.125rem;
+  }
+
+  .about-content__img {
+    margin-top: 0;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    margin-bottom: 5rem;
+  }
+
+  .projects-content__img {
+    grid-column: 1 / 3;
+  }
+
+  .projects-content__img img {
+    opacity: 0.3;
+  }
+
+  .projects-content__img img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .projects-content__img.reverse {
+    grid-column: 2 / 4;
+  }
+
+  .projects-content__img img {
+    border-radius: 25px;
+  }
+
+  .projects-content__des {
+    grid-column: 2 / 4;
+    text-align: right;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .projects-content__des.reverse {
+    grid-column: 1 / 3;
+    text-align: left;
+  }
+
+  .projects-content__des h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .projects-content__des p {
+    background-color: #201534;
+    text-align: left;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .projects-content__des p + span {
+    margin-left: 0.5rem;
+  }
+
+  .projects-content__des i {
+    margin-left: 0.6rem;
+    margin-right: 0.3rem;
+  }
+
+  .contact-content h1 {
+    font-size: 2rem;
+  }
+
+  .contact-content p {
+    font-size: 1.125rem;
+  }
+
+  .contact-content button {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .footer-social i {
+    font-size: 1.3rem;
+  }
+
+  .footer-info {
+    font-size: 1rem;
+  }
 }

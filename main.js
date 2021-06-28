@@ -1,16 +1,13 @@
 const menuBtn = document.querySelector(".menu-btn");
-const mainNav = document.querySelector(".main-nav");
-const navItem = document.querySelector(".main-nav__items li");
-const exitMenuBtn = document.querySelector(".exit-menu-btn");
-
-window.addEventListener("load", () => {
-  mainNav.classList.remove("aos-animate");
-});
+const mainNavItems = document.querySelector(".main-nav__items");
+const mainNavItem = document.querySelectorAll(".main-nav__item");
 
 menuBtn.addEventListener("click", () => {
-  mainNav.classList.add("aos-animate");
+  mainNavItems.classList.toggle("show");
 });
 
-exitMenuBtn.addEventListener("click", () => {
-  mainNav.classList.remove("aos-animate");
+mainNavItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    mainNavItems.classList.toggle("show");
+  });
 });

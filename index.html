@@ -22,20 +22,20 @@
     
     <!-- Header/Navbar -->
     <header class="main-header">
-        <!-- Brand Logo -->
-        <a href="/" class="brand-logo">PA<span>CODE</span>V</a>
-        <!-- Navbar Menu -->
-        <i class="menu-btn fas fa-bars"></i>
-        <nav class="main-nav" data-aos="fade-left" data-aos-duration="500" data-aos-id="main-nav">
-            <ul class="main-nav__items">
-                <li><i class="exit-menu-btn fas fa-times"></i></li>
-                <li><a href="/">HOME</a></li>
-                <li><a href="/">ABOUT</a></li>
-                <li><a href="/">PROJECTS</a></li>
-                <li><a href="/">CONTACT</a></li>
-                <li><a href="/">RESUME</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="/" class="brand-logo">PA<span>CODE</span>V</a>
+            <!-- Navbar Menu -->
+            <nav class="main-nav">
+                <ul class="main-nav__items">
+                    <li class="main-nav__item"><a href="#">HOME</a></li>
+                    <li class="main-nav__item"><a href="#about-section">ABOUT</a></li>
+                    <li class="main-nav__item"><a href="#projects-section">PROJECTS</a></li>
+                    <li class="main-nav__item"><a href="/">RESUME</a></li>
+                </ul>
+            </nav>
+            <i class="menu-btn fas fa-bars"></i>
+        </div>
     </header>
     
     <!-- Content -->
@@ -55,6 +55,7 @@
             <div class="hero-ide">
 
             </div>
+            <div id="about-section"></div>
         </section>
 
         <!-- About Section -->
@@ -82,9 +83,9 @@
                 </div>
                 <!-- About Image -->
                 <div class="about-content__img"><img src="/img/me.jpg" alt="Francisco. P"></div>
+                <div id="projects-section"></div>
             </div>
         </section>
-
         <!-- Projects -->
         <section class="projects-section" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <!-- Section Header -->
@@ -107,15 +108,17 @@
                         <!-- Tags -->
                         <span>HTML CSS Javascript React</span>
                         <!-- Project Share Icons -->
-                        <i class="fab fa-github"></i>
-                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <i class="fab fa-github"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-container" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-                    <div class="projects-content__img"><img src="img/test-project.jpg" alt=""></div>
-                    <div class="projects-content__des">
+                    <div class="projects-content__img reverse"><img src="img/test-project.jpg" alt=""></div>
+                    <div class="projects-content__des reverse">
                         <!-- Project Tittle -->
                         <span>Feature Project</span>
                         <h1>Project Name</h1>
@@ -124,8 +127,10 @@
                         <!-- Project Tags -->
                         <span>HTML CSS Javascript React</span>
                         <!-- Project Share Icons -->
-                        <i class="fab fa-github"></i>
-                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <i class="fab fa-github"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>    
                     </div>
                 </div>
 
@@ -141,8 +146,10 @@
                         <!-- Project Tags -->
                         <span>HTML CSS Javascript React</span>
                         <!-- Project Icons -->
-                        <i class="fab fa-github"></i>
-                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <i class="fab fa-github"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>    
                     </div>
                 </div>
 
@@ -150,7 +157,7 @@
         </section>
         
         <!-- Contact Me Section -->
-        <section class="contact-section" data-aos="fade-in" data-aos-duration="2000">
+        <section id="contact-section" class="contact-section" data-aos="fade-in" data-aos-duration="2000">
             <!-- Section Header -->
             <div class="section-header">
                 <div class="section-header__line"></div>
