@@ -108,13 +108,13 @@ body {
 .hero-section {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
 }
 
 .hero-content {
   font-size: clamp(1rem, 6.3vw, 2rem);
-  position: relative;
-  bottom: 5rem;
+  /* position: relative;
+  bottom: 5rem; */
 }
 
 .hero-content span {
@@ -181,8 +181,12 @@ body {
   width: 100%;
 }
 
+.section-ancher {
+  height: 5rem;
+}
+
 .about-section {
-  margin-top: -8rem;
+  margin-top: 0rem;
   margin-bottom: 5rem;
 }
 
@@ -397,8 +401,8 @@ body {
   }
 
   .header-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .fa-bars {
