@@ -112,7 +112,7 @@ body {
 }
 
 .hero-content {
-  font-size: clamp(1rem, 6.3vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   /* position: relative;
   bottom: 5rem; */
 }
@@ -120,7 +120,7 @@ body {
 .hero-content span {
   color: #714891;
   font-family: "Bitter", serif;
-  font-size: clamp(0.5rem, 5vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   letter-spacing: 0.1em;
   padding-left: 0.2rem;
 }
@@ -147,12 +147,17 @@ body {
 .hero-btn {
   background: #291f2c;
   border: 0.2rem solid #714891;
-  color: inherit;
+  color: white;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 1rem 3rem;
   margin-top: 3rem;
   border-radius: 0.5rem;
+}
+
+.hero-btn a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .hero-btn:hover {
@@ -287,11 +292,15 @@ body {
   margin-bottom: 2rem;
 }
 
+.projects-content__img {
+  height: 100%;
+}
+
 .projects-content__img img {
   width: 100%;
-  height: 22rem;
+  height: 24rem;
   object-fit: cover;
-  opacity: 0.1;
+  opacity: 0.3;
   transition: opacity 2s;
 }
 
@@ -300,6 +309,8 @@ body {
   top: 0;
   padding: 2.5rem 1.5rem;
   min-width: 20.5rem;
+  height: 100%;
+  background-color: #0b000dba;
 }
 
 .projects-content__des h1 {
@@ -328,10 +339,20 @@ body {
   letter-spacing: 0;
 }
 
+.projects-content__des a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .projects-content__des i {
   margin-left: 0.2rem;
   margin-right: 0.9rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.projects-content__des i:hover {
+  color: #714891;
   cursor: pointer;
 }
 
@@ -502,6 +523,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fff0;
   }
 
   .projects-content__des.reverse {
