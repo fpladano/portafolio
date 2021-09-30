@@ -410,6 +410,11 @@ body {
   margin-bottom: 1rem;
 }
 
+.footer-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer-social i {
   padding: 1rem;
   font-size: 1.25rem;
