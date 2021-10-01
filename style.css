@@ -621,6 +621,11 @@ body {
     font-weight: 600;
   }
 
+  .contact-content a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   .footer-social i {
     font-size: 1.3rem;
   }
