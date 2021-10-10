@@ -1,2 +1,2 @@
-# portafolio
-Personal Portafolio
+#Portfolio
+Personal Portfolio
